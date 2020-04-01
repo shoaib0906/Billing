@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A simple, clean, and responsive HTML invoice template</title>
+    
+    <style>
+    .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 10px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        font-size: 10px;
+        line-height: 24px;
+        font-family: 'Tahoma', Geneva, sans-serif;
+        color: #555;
+    }
+    
+    .invoice-box table {
+        width: 100%;
+        line-height: initial;
+        text-align: left;
+    }
+    
+    .invoice-box table td {
+        padding: 2px;
+        vertical-align: top;
+    }
+    
+    .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+    }
+    
+    .invoice-box table tr.top table td {
+        padding-bottom: 1px;
+    }
+    
+    .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+    }
+
+    .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+    }
+    
+    .invoice-box table tr.details td {
+        padding-bottom: 2px;        
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom: 1px solid #eee;
+    }
+    
+    .invoice-box table tr.item.last td {
+        border-bottom: none;
+    }
+    
+    .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+    }
+    br
+		{   
+		    margin: 2px !important;
+		    padding: 2px!important;
+		}
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        
+        .invoice-box table tr.information table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+
+        }
+    }
+    .invoice-box table tr.top table td.title {
+    font-size: 45px;
+    line-height: 20px;
+    color: #333;
+}
+    /** RTL **/
+    .rtl {
+        direction: rtl;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+    
+    .rtl table {
+        text-align: right;
+    }
+    
+    
+    tr td span 
+		{
+		    display: initial;
+		    font-size: 9px;
+		}
+		.address span{
+			display: initial;
+		    font-size: 9px;
+		}
+		.number{
+			text-align: right;
+		}
+		.date{
+			text-align: center;
+		}
+        .text_left span{
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="10">
+                    <table>
+                        <tr>
+                           
+                            <td align="left" style="text-align:left;" colspan="5">
+                               
+                                <span style="font-size: 15px;">Flora Limited 
+                                </span>                            
+                            </td>
+                            <td colspan="2" align="right">Date:11-Nov-2016 </td>
+
+                        </tr>
+                        <tr>
+                           
+                            <td align="left" style="text-align:left;" colspan="8">
+                               
+                                <span style="font-size: 15px;">Branch Name<br>From : Accounts & Finance Dept., CHQ, Motijheel, Dhaka.<br>
+                                <div style="text-decoration: underline;font-size:18px;padding:5px 0px;">Sub : Outstandinq Bill.</div>
+                                <span style="font-size: 10px;">AttN : <strong>MT. MUNIRA AKHTER -MJ</strong><br>
+                                </span>
+                                <span>We have observed that a sum of tk. 1,22,523 remains Outstanding in your account per list
+appeard as under.<br>
+You are hereby requested earnestly to realise the these amount and reporl your progress of recovery
+including any problem of particular bill (if any) to the undersigned in every week without fail.<br>
+Thanking You,<br>
+For FLORA LIMITED<br>
+Md. Zannal<br>
+Dy. Credit Controller<br></span>
+                                </span>                            
+                            </td>
+                            
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            
+            
+            <tr class="heading">
+                <td class="date">
+                    Bill Group
+                </td>
+                <td class="date">
+                    Bill No
+                </td>
+                <td class="date">
+                    Bill Date
+                </td>
+                <td class="date">
+                    Sales Man
+                </td>
+                <td class="number">
+                    Bill Amount
+                </td>
+                
+                <td class="number">
+                    Outstanding
+                </td>
+                
+            </tr>
+            
+            <tr class="details">
+                
+                <td class="text_left" colspan="3">
+                <span>CENTRE FOR THE REHABILITATION OF PARALYSED(CR)</br>
+                HEAD OFFICE : CRP, P.O.</br>
+                SAVAR, DHAKA-1343</br>
+                Tel:7745464-5</span>
+                </td>
+                
+                
+            </tr>
+
+            <tr class="details">
+                <td class="date">
+                    MJ/MC  
+                </td>                
+                <td class="date">78115-16
+                
+                    
+                </td>
+                <td class="date">
+                    20-Sep-2017
+                </td>
+                <td class="date">
+                    MUNIRA AKHTER.MJ
+                </td>
+                
+                <td class="number">
+                    2,00,000/=
+                </td>
+                <td class="number">
+                    3,00,000/=
+                </td>
+                
+            </tr>
+            <tr class="details">
+                <td class="date">
+                    MJ/MC  
+                </td>                
+                <td class="date">78115-16
+                
+                    
+                </td>
+                <td class="date">
+                    20-Sep-2017
+                </td>
+                <td class="date">
+                    MUNIRA AKHTER.MJ
+                </td>
+                
+                <td class="number">
+                    2,00,000/=
+                </td>
+                <td class="number">
+                    3,00,000/=
+
+                </td>
+                
+            </tr>
+            <tr bgcolor="#eee" style="font-weight:bold;">
+            
+                <td colspan="4" class="number">** Total **</td>
+                <td  class="number">3,00,000/=</td>
+                <td  colspan="2" class="number">1,013/=</td>            
+            </tr>
+             <tr class="details">
+                
+                <td class="text_left" colspan="3">
+                <span>CENTRE FOR THE REHABILITATION OF PARALYSED(CR)</br>
+                HEAD OFFICE : CRP, P.O.</br>
+                SAVAR, DHAKA-1343</br>
+                Tel:7745464-5</span>
+                </td>
+                
+                
+            </tr>
+
+            <tr class="details">
+                <td class="date">
+                    MJ/MC  
+                </td>                
+                <td class="date">78115-16
+                
+                    
+                </td>
+                <td class="date">
+                    20-Sep-2017
+                </td>
+                <td class="date">
+                    MUNIRA AKHTER.MJ
+                </td>
+                
+                <td class="number">
+                    2,00,000/=
+                </td>
+                <td class="number">
+                    3,00,000/=
+                </td>
+                
+            </tr>
+            <tr class="details">
+                <td class="date">
+                    MJ/MC  
+                </td>                
+                <td class="date">78115-16
+                
+                    
+                </td>
+                <td class="date">
+                    20-Sep-2017
+                </td>
+                <td class="date">
+                    MUNIRA AKHTER.MJ
+                </td>
+                
+                <td class="number">
+                    2,00,000/=
+                </td>
+                <td class="number">
+                    3,00,000/=
+                </td>
+                
+            </tr>
+           	<tr bgcolor="#eee" style="font-weight:bold;">
+           	
+           		<td colspan="4" class="number">** Total **</td>
+           		<td  class="number">3,00,000/=</td>
+           		<td  colspan="2" class="number">1,013/=</td>           	
+           	</tr>
+           	<tr>
+           	<td colspan="8"><br><br>
+           		<br><br><br>
+           		</td>
+           		
+           	</tr>
+           	<tr bgcolor="gray" style="font-weight:bold;color:white;">
+            
+                <td colspan="4" class="number">** Grand Total **</td>
+                <td  class="number">3,00,000/=</td>
+                <td  colspan="2" class="number">1,013/=</td>            
+            </tr>
+            <tr>
+            <td colspan="8"><br><br>
+                <br><br><br>
+                </td>
+                
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

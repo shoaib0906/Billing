@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title> Invoice</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="{{asset('public/bootstrap.css')}}" rel="stylesheet" />
+    <!-- CUSTOM STYLE  -->
+    <link href="{{asset('public/custom-style.css')}}" rel="stylesheet" />
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+    <style type="text/css">
+        .text-left {
+            text-align: left;
+        }
+        .text-right {
+            text-align: right;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        table.tblStyle1 {
+            font-size:10px;
+            height:350px;
+            min-height:350px !important;
+            padding:0px!important;
+            margin:0px!important;
+        }
+        table.tblStyle1 tr{
+            padding:0px!important;
+            margin:0px!important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" >
+
+        <table>
+            <tr>
+                <td width="180px">
+                    <img src="logo.jpg" width="100" />
+                </td>
+
+                <td colspan="6">
+                    <h3><center><strong>TOKA INK BANGLADESH LIMITED</strong></center>
+                    <center> 2 D.I.T.Avenue(Extension) 2nd Floor</center>
+
+                    <center>Motijheel Commercial Area </center>
+
+                    <center>Dhaka-1000</center></h3>
+
+                    
+                </td>
+            </tr>
+        </table> 
+        <h2><center>Bill / Invoice</center></h2> <hr style="height:1px;border:none;color:#333;background-color:#333;" />
+        <table border="0px" border-spacing="" style="text-align:center!important;">
+            @foreach($bill_details as $bill_details)
+            <tr>
+                <td width="382px" style="text-align:left!important;">
+
+                    <strong>Bill Information :</strong>
+                    <br/> Bill Amount : {{($bill_details->net_amt)}}
+
+                    <br /> Bill No : {{$bill_details->bill_no}}
+                    <br /> Bill Date : {{$bill_details->bill_date}}
+                   
+                </td>
+                <td width="342px" style="text-align:left!important;">
+                    <strong>Customer Information :</strong>
+                    <br/> {{$bill_details->name}}
+                    <br /> {{$bill_details->address}} <br /> Order No : {{$bill_details->order_no}}<br /> 
+                </td>
+                
+            </tr>
+            @endforeach
+        </table>
+        
+        <hr style="height:1px;border:none;color:#333;background-color:#333;" />
+        <?php $sl_no=0;?>
+            <div class="row" >
+                <div class="col-lg-12 col-md-12 col-sm-12" >
+                    <div class="" >
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                                    
+                                    <th width="50px" class="text-left">Sl.#</th>
+                                    <th width="300px" class="text-left">Product Name</th>
+                                    <th width="50px" class="text-center">Qty</th>
+                                    <th width="100px" class="text-center">Unit Price</th>
+                                    <th width="140px" class="text-right">Sub Total</th>
+                                </tr>
+                            </thead>
+                        </table><hr style="height:1px;border:none;color:#333;background-color:#333;" />
+                        <table class="tblStyle1" >
+                            
+                            
+                                @foreach($product as $product)
+                                <tr>
+                                    <td width="50px" class="text-left" valign="top">{{$sl_no=$sl_no+1}} </td>
+                                    <td width="300px" class="text-left" valign="top">{{$product->title}}</td>
+                                    <td width="50px" class="text-center" valign="top"> {{($product->quantity)}} {{($product->unit)}}</td>
+                                    <td width="100px" class="text-center" valign="top"> {{($product->selling_price) }}/{{($product->unit)}}</td>
+                                    <td width="140px" class="text-right" valign="top">
+                                        {{number_format($product->selling_price1,2)}}
+                                    </td>
+                                </tr>
+                                @endforeach
+
+                           
+                        </table>
+                    </div>
+                    <hr style="height:1px;border:none;color:#333;background-color:#333;" />
+
+                    <table>
+                        <tr>
+                            <td width="380px">
+
+                            </td>
+                            <td width="300px">
+
+                                <table>
+                                    @foreach($bill_detail as $bill_details)
+                                    <tr style="line-height: 14px;">
+                                        <td width="100">Sub Total :</td>
+                                        <td width="80" class="text-right">{{number_format($bill_details->total_amt,2)}}</td>
+                                    </tr>
+                                    <tr style="line-height: 14px;">
+                                        <td width="100">Discount (%) : </td>
+                                        <td width="100" class="text-right">{{$bill_details->dis_percent}}%</td>
+                                    </tr>
+                                    <tr style="line-height: 14px;">
+                                        <td width="100">Discount(Tk) :</td>
+                                        <td width="100" class="text-right">{{$bill_details->total_amt*$bill_details->dis_percent/100}}</td>
+                                    </tr>
+                                    <tr style="line-height: 14px;">
+                                        <td width="100">Less Amount :</td>
+                                        <td width="100" class="text-right">{{number_format($bill_details->less_amt,2)}}</td>
+                                    </tr>
+                                    <tr >
+                                        <td><strong>Bill Amount :</strong></td>
+                                        <td class="text-right"><strong>{{number_format($bill_details->net_amt,2)}}</strong></td>
+                                    </tr>
+                                    @endforeach
+                                    <tr>
+                                        <td width="100">Challan No :</td>
+                                        <td width="100" class="text-right">
+                                           
+
+                                        </td>
+                                    </tr>
+<tr> <td style="font-size:10px!important;">@foreach($challan_no as $challan_no1 ) @foreach($challan_no1 as $challan_no )
+                                            {!! $challan_no !!} @endforeach | @endforeach</td></tr>
+                                </table>
+
+                                <br/>
+
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+                
+
+            </div>
+            <div class="row text-center contact-info">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+
+                        <span>
+                 Bill Amount :<i> <?php $f = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+echo $f->format(($bill_details->net_amt)); ?> Taka Only</i> 
+             </span>
+
+                        <hr style="height:1px;border:none;color:#333;background-color:#333;" />
+                    </div>
+                </div>
+                <div class="row">
+<br/><br/>
+                    <div class="text-right col-lg-12 col-md-12 col-sm-12">
+                        <strong>Mg. Director/ Director / Manager</strong>
+                        
+                    </div>
+                </div>
+    </div>
+    
+</body>
+
+</html>

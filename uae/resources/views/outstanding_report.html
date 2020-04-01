@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A simple, clean, and responsive HTML invoice template</title>
+    
+    <style>
+    .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 10px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        font-size: 10px;
+        line-height: 24px;
+        font-family: 'Tahoma', Geneva, sans-serif;
+        color: #555;
+    }
+    
+    .invoice-box table {
+        width: 100%;
+        line-height: initial;
+        text-align: left;
+    }
+    
+    .invoice-box table td {
+        padding: 2px;
+        vertical-align: top;
+    }
+    
+    .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+    }
+    
+    .invoice-box table tr.top table td {
+        padding-bottom: 1px;
+    }
+    
+    .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+    }
+
+    .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+    }
+    
+    .invoice-box table tr.details td {
+        padding-bottom: 2px;        
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom: 1px solid #eee;
+    }
+    
+    .invoice-box table tr.item.last td {
+        border-bottom: none;
+    }
+    
+    .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+    }
+    br
+		{   
+		    margin: 2px !important;
+		    padding: 2px!important;
+		}
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        
+        .invoice-box table tr.information table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+
+        }
+    }
+    .invoice-box table tr.top table td.title {
+    font-size: 45px;
+    line-height: 20px;
+    color: #333;
+}
+    /** RTL **/
+    .rtl {
+        direction: rtl;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+    
+    .rtl table {
+        text-align: right;
+    }
+    
+    
+    tr td span 
+		{
+		    display: initial;
+		    font-size: 9px;
+		}
+		.address span{
+			display: initial;
+		    font-size: 9px;
+		}
+		.number{
+			text-align: right;
+		}
+		.date{
+			text-align: center;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="8">
+                    <table>
+                        <tr>
+                            <td class="title" style="width:50px!important;padding-right:5px!important;">
+                                <img src="https://www.sparksuite.com/images/logo.png" style="width:100px;  ">
+                                
+                            </td>
+                            <td align="left" style="text-align:left;">
+                               
+                                <span style="font-size: 15px;">Flora Limited <br>CUSTOMER WISE OUTSTANDING</span>                            
+                            </td>
+                            
+
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="10">
+                    <table>
+                        <tr>
+                            <td class="address">
+                                <span>DIGITAL TECHNOLOGY CARE-MJ Branch<br></span>
+                                <span>ADAMJEE ANNEX-1 (GROUND FLOOR)<br></span>
+								i i5-116 MOTIJHEEL C/A DHAKA-10
+                            </td>
+                            
+                            <td><br><br>
+                                <i>printing Date : 03/11/2017/271/14 14</i>
+                               
+                            </td>
+                        </tr>
+                    </table><br>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td class="date">
+                    Ref Name
+                </td>
+                <td class="date">
+                    Ref No
+                </td>
+                <td class="date">
+                    Date
+                </td>
+                <td class="date">
+                    Sales Man
+                </td>
+                <td class="number">
+                    Bill Amount
+                </td>
+                <td class="number">
+                    Payment
+                </td>
+                <td class="number">
+                    Outstanding
+                </td>
+                <td class="number">
+                    Payment Due Days
+                </td>
+                <td class="number">
+                    Interest Receivable
+                </td>
+            </tr>
+            
+            <tr class="details">
+                <td class="date">
+                    IBD/ICPA/APS
+                </td>                
+                <td class="date">
+                    18/17-18
+                </td>
+                <td class="date">
+                    20-Sep-2017
+                </td>
+                <td class="date">
+                    Jahangir Alam
+                </td>
+                <td class="number">
+                    5,00,000/=
+                </td>
+                <td class="number">
+                    2,00,000/=
+                </td>
+                <td class="number">
+                    3,00,000/=
+                </td>
+                <td class="date">
+                    11
+                </td>
+                <td class="number">
+                    1,013/=
+                </td>
+            </tr>
+            <tr class="">
+                <td class="date">
+                    IBD/ICPA/APS
+                </td>                
+                <td class="date">
+                    18/17-18
+                </td>
+                <td class="date">
+                    20-Sep-2017
+                </td>
+                <td class="date">
+                    Jahangir Alam
+                </td>
+                <td class="number">
+                    5,00,000/=
+                </td>
+                <td class="number">
+                    2,00,000/=
+                </td>
+                <td class="number">
+                    3,00,000/=
+                </td>
+                <td class="date">
+                    11
+                </td>
+                <td class="number">
+                    1,013/=
+                </td>
+
+            </tr>
+            
+           	<tr bgcolor="#eee" style="font-weight:bold;">
+           	<br>
+           		<td colspan="6" class="number">** Total **</td>
+           		<td  class="number">3,00,000/=</td>
+           		<td  colspan="2" class="number">1,013/=</td>           	
+           	</tr>
+           	<tr>
+           	<td colspan="8"><br><br>
+           		<br><br><br>
+           		</td>
+           		
+           	</tr>
+           	<tr class="information">
+                <td colspan="10">
+                    <table>
+                        <tr>
+                        	<td colspan="4">
+                        		
+                        	</td>
+                            <td  colspan="2">
+                                
+                                <center><hr style="width:120px;">Authorized Signature</center>
+                            </td>
+                            
+                            <td  colspan="2"><hr style="width:120px;">
+                                <center>Authorized Signature</center>
+                               
+                            </td>
+                        </tr>
+                    </table><br>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
